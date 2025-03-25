@@ -50,7 +50,7 @@ def get_weather():
             response.close()
 
 with open('config') as conf_file:
-    config = ujson.loads(conf_file.read())
+    config = ujson.load(conf_file)
     WIFI_SSID = config["WIFI_SSID"]
     WIFI_PASSWORD = config["WIFI_PASSWORD"]
     LATITUDE = config["LATITUDE"]
@@ -67,3 +67,5 @@ if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
         time.sleep(1800)
 else:
     print("WiFi connection failed")
+    exit(1)
+exit(0)
