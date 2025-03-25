@@ -15,15 +15,11 @@ def connect_wifi(ssid, password):
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
     wlan.connect(ssid, password)
-    max_wait = 10
-    for _  in range(0,max_wait):
+    for _  in range(0, 10):
         if wlan.status() < 0 or wlan.status() >= 3:
             break
         time.sleep(1)
-    if wlan.status() != 3:
-        return False
-    else:
-        return True
+    return wlan.status() == 3
 
 def get_weather():
     try:
