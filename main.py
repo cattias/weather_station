@@ -34,11 +34,7 @@ def get_weather():
             year, month, day, hour, _, _, _, _ = current_time
             formatted_time = f"{year:04d}-{month:02d}-{day:02d}T{hour:02d}:00"
             weather_code = 0
-            wc_index = 0
-            for hours in weather_json["hourly"]["time"]:
-                if hours == formatted_time:
-                    break
-                wc_index += 1
+            wc_index = [h for h in weather_json["hourly"]["time"]].index(hours)
             weather_code = weather_json["hourly"]["weather_code"][wc_index]
             return WEATHER_CODES[str(weather_code)]
         else:
