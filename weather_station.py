@@ -49,7 +49,7 @@ def get_weather():
         if 'response' in locals():
             response.close()
 
-with open('.config') as conf_file:
+with open('config') as conf_file:
     config = ujson.loads(conf_file.read())
     WIFI_SSID = config["WIFI_SSID"]
     WIFI_PASSWORD = config["WIFI_PASSWORD"]
