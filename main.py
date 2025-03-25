@@ -32,10 +32,10 @@ def get_weather():
             current_time = time.localtime()
             year, month, day, hour, _, _, _, _ = current_time
             formatted_time = f"{year:04d}-{month:02d}-{day:02d}T{hour:02d}:00"
-            weather_code = 0
-            wc_index = [h for h in weather_json["hourly"]["time"]].index(hours)
-            weather_code = weather_json["hourly"]["weather_code"][wc_index]
-            return WEATHER_CODES[str(weather_code)]
+            for idx, hours in enumerate(weather_json["hourly"]["time"]):
+                if hours == formatted_time:
+                    return WEATHER_CODES[str(weather_json["hourly"]["weather_code"][idx])]
+            return WEATHER_CODES["0"]   
         else:
             return f"Error: Unable to retrieve weather data (status code: {response.status_code}, message: {response.text})"
     except Exception as e:
