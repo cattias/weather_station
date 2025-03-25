@@ -32,7 +32,7 @@ def get_weather():
             for idx, hours in enumerate(weather_json["hourly"]["time"]):
                 if hours == formatted_time:
                     return WEATHER_CODES[str(weather_json["hourly"]["weather_code"][idx])]
-            return WEATHER_CODES["0"]   
+            raise Exception("Weather code not found !")
         else:
             return f"Error: Unable to retrieve weather data (status code: {response.status_code}, message: {response.text})"
     except Exception as e:
