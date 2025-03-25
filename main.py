@@ -55,7 +55,7 @@ with open('config') as conf_file:
     WIFI_PASSWORD = config["WIFI_PASSWORD"]
     LATITUDE = config["LATITUDE"]
     LONGITUDE = config["LONGITUDE"]
-    URL = f"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1" % (LATITUDE, LONGITUDE)
+    URL = f"https://api.open-meteo.com/v1/forecast?latitude={LATITUDE}&longitude={LONGITUDE}&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1"
 
 if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
     print("WiFi connected")
