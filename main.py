@@ -2,6 +2,7 @@ import network
 import urequests
 import ujson
 import time
+import machine
 
 WIFI_SSID = "YOUR_WIFI_SSID"
 WIFI_PASSWORD = "YOUR_WIFI_PWD"
@@ -61,9 +62,14 @@ if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
     print("WiFi connected")
     with open('weather_codes.json') as data_file:
         WEATHER_CODES = ujson.loads(data_file.read())
+    led = machine.Pin("LED", machine.Pin.OUT)
     while True:
         weather_info = get_weather()
         print(weather_info)
-        time.sleep(1800)
+        led.on()
+        #time.sleep(1800)
+        time.sleep(10)
+        led.off()
+        time.sleep(10)
 else:
     print("WiFi connection failed")
