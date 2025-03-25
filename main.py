@@ -61,7 +61,9 @@ if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
     print("WiFi connected")
     with open('weather_codes.json') as data_file:
         WEATHER_CODES = ujson.loads(data_file.read())
-    weather_info = get_weather()
-    print(weather_info)
+    while True:
+        weather_info = get_weather()
+        print(weather_info)
+        time.sleep(1800)
 else:
     print("WiFi connection failed")
