@@ -31,8 +31,8 @@ def get_weather():
         if response.status_code == 200:
             weather_json = ujson.loads(response.text)
             current_time = time.localtime()
-            year, month, day, hour, minute, second, weekday, yearday = current_time
-            formatted_time = "{:04d}-{:02d}-{:02d}T{:02d}:00".format(year, month, day, hour)
+            year, month, day, hour, _, _, _, _ = current_time
+            formatted_time = f"{year:04d}-{month:02d}-{day:02d}T{hour:02d}:00"
             weather_code = 0
             wc_index = 0
             for hours in weather_json["hourly"]["time"]:
