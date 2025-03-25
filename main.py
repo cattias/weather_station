@@ -16,10 +16,9 @@ def connect_wifi(ssid, password):
     wlan.active(True)
     wlan.connect(ssid, password)
     max_wait = 10
-    while max_wait > 0:
+    for _  in range(0,max_wait):
         if wlan.status() < 0 or wlan.status() >= 3:
             break
-        max_wait -= 1
         time.sleep(1)
     if wlan.status() != 3:
         return False
@@ -32,16 +31,12 @@ def get_weather():
         if response.status_code == 200:
             weather_json = ujson.loads(response.text)
             current_time = time.localtime()
-            year, month, day, hour, minute, second, weekday, yearday = current_time
-            formatted_time = "{:04d}-{:02d}-{:02d}T{:02d}:00".format(year, month, day, hour)
-            weather_code = 0
-            wc_index = 0
-            for hours in weather_json["hourly"]["time"]:
+            year, month, day, hour, _, _, _, _ = current_time
+            formatted_time = f"{year:04d}-{month:02d}-{day:02d}T{hour:02d}:00"
+            for idx, hours in enumerate(weather_json["hourly"]["time"]):
                 if hours == formatted_time:
-                    break
-                wc_index += 1
-            weather_code = weather_json["hourly"]["weather_code"][wc_index]
-            return WEATHER_CODES[str(weather_code)]
+                    return WEATHER_CODES[str(weather_json["hourly"]["weather_code"][idx])]
+            return WEATHER_CODES["0"]   
         else:
             return f"Error: Unable to retrieve weather data (status code: {response.status_code}, message: {response.text})"
     except Exception as e:
@@ -51,12 +46,12 @@ def get_weather():
             response.close()
 
 with open('config') as conf_file:
-    config = ujson.loads(conf_file.read())
+    config = ujson.load(conf_file)
     WIFI_SSID = config["WIFI_SSID"]
     WIFI_PASSWORD = config["WIFI_PASSWORD"]
     LATITUDE = config["LATITUDE"]
     LONGITUDE = config["LONGITUDE"]
-    URL = f"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1" % (LATITUDE, LONGITUDE)
+    URL = f"https://api.open-meteo.com/v1/forecast?latitude={LATITUDE}&longitude={LONGITUDE}&hourly=temperature_2m,weather_code&timezone=auto&forecast_days=1"
 
 if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
     print("WiFi connected")
@@ -73,3 +68,5 @@ if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
         time.sleep(10)
 else:
     print("WiFi connection failed")
+    exit(1)
+exit(0)
