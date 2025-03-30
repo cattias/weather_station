@@ -5,7 +5,8 @@
 		},
 		"night":{
 			"description":"Clear",
-		}
+		},
+		"code": 0
 	},
 	"1":{
 		"day":{
@@ -13,7 +14,8 @@
 		},
 		"night":{
 			"description":"Mainly Clear",
-		}
+		},
+		"code": 0
 	},
 	"2":{
 		"day":{
@@ -21,7 +23,8 @@
 		},
 		"night":{
 			"description":"Partly Cloudy",
-		}
+		},
+		"code": 2
 	},
 	"3":{
 		"day":{
@@ -29,7 +32,8 @@
 		},
 		"night":{
 			"description":"Cloudy",
-		}
+		},
+		"code": 2
 	},
 	"45":{
 		"day":{
@@ -37,7 +41,8 @@
 		},
 		"night":{
 			"description":"Foggy",
-		}
+		},
+		"code": 2
 	},
 	"48":{
 		"day":{
@@ -45,7 +50,8 @@
 		},
 		"night":{
 			"description":"Rime Fog",
-		}
+		},
+		"code": 2
 	},
 	"51":{
 		"day":{
@@ -53,7 +59,8 @@
 		},
 		"night":{
 			"description":"Light Drizzle",
-		}
+		},
+		"code": 1
 	},
 	"53":{
 		"day":{
@@ -61,7 +68,8 @@
 		},
 		"night":{
 			"description":"Drizzle",
-		}
+		},
+		"code": 1
 	},
 	"55":{
 		"day":{
@@ -69,7 +77,8 @@
 		},
 		"night":{
 			"description":"Heavy Drizzle",
-		}
+		},
+		"code": 1
 	},
 	"56":{
 		"day":{
@@ -77,7 +86,8 @@
 		},
 		"night":{
 			"description":"Light Freezing Drizzle",
-		}
+		},
+		"code": 1
 	},
 	"57":{
 		"day":{
@@ -85,7 +95,8 @@
 		},
 		"night":{
 			"description":"Freezing Drizzle",
-		}
+		},
+		"code": 1
 	},
 	"61":{
 		"day":{
@@ -93,7 +104,8 @@
 		},
 		"night":{
 			"description":"Light Rain",
-		}
+		},
+		"code": 1
 	},
 	"63":{
 		"day":{
@@ -101,7 +113,8 @@
 		},
 		"night":{
 			"description":"Rain",
-		}
+		},
+		"code": 1
 	},
 	"65":{
 		"day":{
@@ -109,7 +122,8 @@
 		},
 		"night":{
 			"description":"Heavy Rain",
-		}
+		},
+		"code": 1
 	},
 	"66":{
 		"day":{
@@ -117,7 +131,8 @@
 		},
 		"night":{
 			"description":"Light Freezing Rain",
-		}
+		},
+		"code": 1
 	},
 	"67":{
 		"day":{
@@ -125,7 +140,8 @@
 		},
 		"night":{
 			"description":"Freezing Rain",
-		}
+		},
+		"code": 1
 	},
 	"71":{
 		"day":{
@@ -133,7 +149,8 @@
 		},
 		"night":{
 			"description":"Light Snow",
-		}
+		},
+		"code": 1
 	},
 	"73":{
 		"day":{
@@ -141,7 +158,8 @@
 		},
 		"night":{
 			"description":"Snow",
-		}
+		},
+		"code": 1
 	},
 	"75":{
 		"day":{
@@ -149,7 +167,8 @@
 		},
 		"night":{
 			"description":"Heavy Snow",
-		}
+		},
+		"code": 1
 	},
 	"77":{
 		"day":{
@@ -157,7 +176,8 @@
 		},
 		"night":{
 			"description":"Snow Grains",
-		}
+		},
+		"code": 1
 	},
 	"80":{
 		"day":{
@@ -165,7 +185,8 @@
 		},
 		"night":{
 			"description":"Light Showers",
-		}
+		},
+		"code": 1
 	},
 	"81":{
 		"day":{
@@ -173,7 +194,8 @@
 		},
 		"night":{
 			"description":"Showers",
-		}
+		},
+		"code": 1
 	},
 	"82":{
 		"day":{
@@ -181,7 +203,8 @@
 		},
 		"night":{
 			"description":"Heavy Showers",
-		}
+		},
+		"code": 1
 	},
 	"85":{
 		"day":{
@@ -189,7 +212,8 @@
 		},
 		"night":{
 			"description":"Light Snow Showers",
-		}
+		},
+		"code": 1
 	},
 	"86":{
 		"day":{
@@ -197,7 +221,8 @@
 		},
 		"night":{
 			"description":"Snow Showers",
-		}
+		},
+		"code": 1
 	},
 	"95":{
 		"day":{
@@ -205,7 +230,8 @@
 		},
 		"night":{
 			"description":"Thunderstorm",
-		}
+		},
+		"code": 1
 	},
 	"96":{
 		"day":{
@@ -213,7 +239,8 @@
 		},
 		"night":{
 			"description":"Light Thunderstorms With Hail",
-		}
+		},
+		"code": 1
 	},
 	"99":{
 		"day":{
@@ -221,6 +248,7 @@
 		},
 		"night":{
 			"description":"Thunderstorm With Hail",
-		}
+		},
+		"code": 1
 	}
 }

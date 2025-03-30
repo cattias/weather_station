@@ -57,6 +57,7 @@ if connect_wifi(WIFI_SSID, WIFI_PASSWORD):
     while True:
         weather_info = get_weather()
         print(weather_info)
+        print(weather_info["code"])
         led.on()
         #time.sleep(1800)
         time.sleep(10)
